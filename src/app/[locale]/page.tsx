@@ -1,14 +1,10 @@
-"use client"
-import Card from "@/components/card/person.card"
-import {NavigationBottom} from "@/components/navbar/navigation.bottom"
-import Hero from "@/components/section/heroSearch"
+'use client';
+import Authed from '@/view/home/authed.home';
 
-export default async function IndexPage() {
+export default function IndexPage() {
   return (
-    <div >
-    <Hero/>
-    <Card/>
-    <NavigationBottom/>
+    <div>
+      <Authed />
     </div>
-);
+  );
 }
