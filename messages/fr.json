@@ -1,0 +1,70 @@
+{
+ 
+  "Register": {
+    "title": "s’inscrire",
+    "qustion": "vous avez déjà un compte ?",
+    "login":"Se connecter",
+    "or":"Ou continuer avec",
+    "name":"Nom complet",
+    "nameplace":"Inscrivez votre nom ",
+    "username":"Nom d'utilisateur ",
+    "usernameplace":"@ Nom d'utilisateur ",
+    "password":"Mot de passe",
+    "passwordplace":"Mot de passe",
+    "Validation_Phone_Legnth":"Le nom d'utilisateur doit contenir plus de 4 caractères.",
+    "Validation_Phone_Required":"Le nom d'utilisateur est nécessaire.",
+    "Validation_Password_Length":"Le mot de passe doit contenir plus de 4 caractères",
+    "Validation_Password_Required":"Le mot de passe est nécessaire.",
+    "Valitdation_FullName_Length":"Le nom doit contenir plus de 4 caractères",
+    "Validation_FullName_Required":"Le nom est nécessaire.",
+    "forbiddenWords":"La phrase fournie inclut un mot interdit.",
+    "Validation_Special_Characters":"Ce champ ne prend pas en charge les caractères spéciaux."
+  },
+  "Login": {
+    "title": "Se connecter",
+    "qustion": "vous avez déjà un compte ?",
+    "register":"s’inscrire",
+    "or":"Ou continuer avec",
+    "name":"Nom complet",
+    "nameplace":"Inscrivez votre nom ",
+    "username":"Nom d'utilisateur ",
+    "usernameplace":"@ Nom d'utilisateur ",
+    "password":"Mot de passe",
+    "passwordplace":"Mot de passe",
+    "forgetPassword":"Mot de passe oublié ?",
+    "Validation_Phone_Legnth":"Le nom d'utilisateur doit contenir plus de 4 caractères.",
+    "Validation_Phone_Required":"Le nom d'utilisateur est nécessaire.",
+    "Validation_Password_Length":"Le mot de passe doit contenir plus de 4 caractères",
+    "Validation_Password_Required":"Le mot de passe est nécessaire.",
+    "Valitdation_FullName_Length":"Le nom doit contenir plus de 4 caractères",
+    "Validation_FullName_Required":"Le nom est nécessaire.",
+    "forbiddenWords":"La phrase fournie inclut un mot interdit."
+  },
+  "Rpassword":{
+    "title":"mot de passe oublié",
+    "detail":"Comment souhaitez-vous réinitialiser votre mot de passe ?",
+   "email":"Email",
+   "descEmail":"Nous vous enverrons les instructions de réinitialisation de votre mot de passe par e-mail.",
+   "phone":"phone",
+   "descPhone":"Nous vous enverrons un code de confirmation par SMS pour réinitialiser votre mot de passe.",
+   "email_Placeholder":"Entre votre email"
+
+  },
+  "Index":{
+    "title1":" Plateforme tout-en-un inclusive",
+    "front1":" Une plateforme unique regroupant artisans, ingénieurs, hommes d'affaires et fournisseurs",
+    "back1":"Notre plateforme est la destination complète qui répond à tous vos besoins en un seul endroit. Peu importe ce que vous recherchez, vous trouverez tout ici, des artisans qualifiés aux options de paiement multiples. Nous rendons les choses faciles pour vous afin que vous puissiez vous concentrer sur la construction de votre maison ou de votre projet sans tracas.",
+    "title2":" la qualité et la garantie ",
+    "front2":" Main-d'œuvre qualifiée et spécialisée",
+    "back2":"Nous nous engageons à fournir qualité et garantie à chaque étape. En nous choisissant, assurez-vous de recevoir le service de haute qualité que vous méritez. Nous sommes là pour garantir votre entière satisfaction et réaliser vos objectifs en toute confiance et tranquillité d'esprit."    ,
+    "title3":"Moyens de paiement variés.",
+    "front3":"Notre plateforme propose plusieurs modes de paiement pour répondre à vos besoins de manière pratique et facile."    ,
+    "back3":"Nous sommes heureux de vous offrir plusieurs moyens de paiement via notre plateforme pour garantir votre confort et faciliter les transactions. Peu importe le mode de paiement que vous préférez, vous trouverez la solution idéale à vos besoins. Nous sommes là pour rendre le processus de paiement fluide et pratique pour vous."
+  },
+  "Empolyer":{
+   "callT":"Numéro",
+   "viewDetaile":"profile",
+   "title":"visiter profile",
+   "heroTitle":""
+  }
+}
