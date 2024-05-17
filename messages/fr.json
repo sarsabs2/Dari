@@ -64,7 +64,50 @@
   "Empolyer":{
    "callT":"Numéro",
    "viewDetaile":"profile",
-   "title":"visiter profile",
-   "heroTitle":""
+   "title":"visiter profile"
+    },
+  "JOB_CATEGORIES":{
+    "title":"Emploi",
+    "1":"Alarme & Sécurité",
+    "2":"Cloison et faux plafond",
+    "3":"Conception & Etudes",
+    "4":"Construction & Rénovation",
+    "5":"Cuisine & Salle de bains",
+    "6":"Domotique",
+    "7":"Électricité & éclairage",
+    "8":"Energies renouvelables",
+    "9":"Isolation & étanchéité",
+    "10":"Jardin & Piscine",
+    "11":"Peinture",
+    "12":"Plomberie, Chaud et Froid",
+    "13":"Portail, porte et fenêtre",
+    "14":"Revêtement mur",
+    "15":"Revêtement sol"
+   },
+   "Gouvernements_tunisiens": {
+    "1": "Tunis",
+    "2": "Kairouan",
+    "3": "Kasserine",
+    "4": "Jendouba",
+    "5": "Ariana",
+    "6": "Béja",
+    "7": "Ben Arous",
+    "8": "Bizerte",
+    "9": "Gabès",
+    "10": "Gafsa",
+    "11": "Sfax",
+    "12": "Sousse",
+    "13": "Kebili",
+    "14": "Kef",
+    "15": "Mahdia",
+    "16": "Manouba",
+    "17": "Médenine",
+    "18": "Monastir",
+    "19": "Nabeul",
+    "20": "Sidi Bouzid",
+    "21": "Siliana",
+    "22": "Tataouine",
+    "23": "Tozeur",
+    "24": "Zaghouan"
   }
 }

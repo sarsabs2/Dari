@@ -1,5 +1,5 @@
-// react import hook
-
+// I18n import
+import {useTranslations} from 'next-intl';
 // headlessUi Import
 import {
   Transition,
@@ -13,6 +13,7 @@ import {
 import {CheckIcon, ChevronUpIcon} from '@heroicons/react/24/outline';
 import {ChevronDownIcon} from '@heroicons/react/24/solid';
 import clsx from 'clsx';
+// react import hook
 import {Fragment, useState} from 'react';
 
 export function Search() {
@@ -75,20 +76,30 @@ export function Search() {
   );
 }
 function JobList() {
+  const t = useTranslations('JOB_CATEGORIES');
+
   const people = [
-    {id: 1, name: 'مهندس معماري'},
-    {id: 2, name: 'بناء'},
-    {id: 3, name: 'دهان'},
-    {id: 4, name: 'نجار'},
-    {id: 5, name: 'حداد'},
-    {id: 6, name: 'سباك'},
-    {id: 7, name: 'كهربائي'}
+    {id: 1, name: t('1')},
+    {id: 2, name: t('2')},
+    {id: 3, name: t('3')},
+    {id: 4, name: t('4')},
+    {id: 5, name: t('5')},
+    {id: 6, name: t('6')},
+    {id: 7, name: t('7')},
+    {id: 8, name: t('8')},
+    {id: 9, name: t('9')},
+    {id: 10, name: t('10')},
+    {id: 11, name: t('11')},
+    {id: 12, name: t('12')},
+    {id: 13, name: t('13')},
+    {id: 14, name: t('14')},
+    {id: 15, name: t('15')}
   ];
   const [selected, setSelected] = useState(people[3]);
   return (
     <Field>
       <Label className=" text-xl md:lg block text-center md:text-right pr-12 font-medium text-gray-400">
-        الخدمة
+        {t('title')}
       </Label>
       <Listbox onChange={setSelected} value={selected}>
         {({open}) => (
