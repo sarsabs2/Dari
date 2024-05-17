@@ -5,5 +5,5 @@ type Props = {
 };
 
 export default function PageLayout({children}: Props) {
-  return <div>{children}</div>;
+  return {children};
 }
