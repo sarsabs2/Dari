@@ -1,15 +1,13 @@
 'use client';
 // next import
+import {useKeenSlider} from 'keen-slider/react';
 import Image from 'next/image';
 import Link from 'next/link';
 // i18n import
 import {useTranslations} from 'next-intl';
-// Ui import for swiper
-import {Navigation, Pagination} from 'swiper/modules';
-import {SwiperSlide} from 'swiper/react';
 // layouts
 import PageLayout from '@/components/PageLayout';
-import Swiper from '@/lib/swiper';
+
 // type
 interface dataIterface {
   id: number;
@@ -47,18 +45,13 @@ export default function Index() {
       alt: 'alt'
     }
   ];
+  const [ref] = useKeenSlider<HTMLDivElement>();
+
   return (
     <PageLayout>
-      <Swiper
-        className="mySwiper"
-        modules={[Pagination, Navigation]}
-        navigation
-        pagination={{
-          type: 'progressbar'
-        }}
-      >
+      <div ref={ref} className="keen-slider">
         {data.map((section) => (
-          <SwiperSlide key={section.id}>
+          <div key={section.id} className="keen-slider__slide">
             <div className="containers">
               <div className="card">
                 <div className="front">
@@ -138,7 +131,7 @@ export default function Index() {
                 </div>
               </div>
             </div>
-          </SwiperSlide>
+          </div>
         ))}
         <Link href="/">
           <button
@@ -148,7 +141,7 @@ export default function Index() {
             Get Started
           </button>
         </Link>
-      </Swiper>
+      </div>
     </PageLayout>
   );
 }

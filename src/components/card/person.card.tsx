@@ -7,7 +7,6 @@ import {useTranslations} from 'next-intl';
 import ShareButton from '@/components/button/share.button';
 import ToolTipsWebsite from '@/components/button/tollTips.website';
 import ToolTipsContact from '@/components/button/toolTips.contact';
-// Ui import for swiper
 
 // User Types
 interface dataIterface {
