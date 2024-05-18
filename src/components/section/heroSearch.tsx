@@ -41,7 +41,7 @@ export function Search() {
                 الخدام الي تستحقو في مرمتك
               </span>
               <span className="block text-blue-600 xl:inline  ">
-                <strong>موجود عندنا 🤭😅</strong>
+                <strong>موجود عندنا </strong>
               </span>
             </h1>
 
@@ -50,10 +50,10 @@ export function Search() {
                 <JobList />
               </div>
               <div className="md:basis-1/4 w-full">
-                <CountryList />
+                <Espically />
               </div>
               <div className=" md:basis-1/4 w-full">
-                <Espically />
+                <CountryList />
               </div>
               <div className="relative md:basis-1/4 w-full ">
                 <button
@@ -94,7 +94,7 @@ function JobList() {
     {id: 13, name: t('13')},
     {id: 14, name: t('14')}
   ];
-  const [selected, setSelected] = useState(JOB_CATEGORIES[3]);
+  const [selected, setSelected] = useState(JOB_CATEGORIES[1]);
   return (
     <Field>
       <Label className=" text-xl md:lg block text-center md:text-right pr-12 font-medium text-gray-400">
@@ -452,7 +452,9 @@ function Espically() {
       ]
     }
   ];
-  const [selected, setSelected] = useState(Domaine_Espicality[3]);
+  const [selected, setSelected] = useState(Domaine_Espicality[1]);
+  const domaine = Domaine_Espicality.find((d) => d.id === 13);
+
   return (
     <Field>
       <Label className=" text-xl md:lg block text-center md:text-right pr-12 font-medium text-gray-400">
@@ -464,7 +466,7 @@ function Espically() {
             <div className="mt-1 relative">
               <ListboxButton className="bg-white relative w-full border-white pr-12  md:text-right cursor-default sm:text-sm">
                 <span className="block truncate text-lg font-medium text-gray-800">
-                  {selected.subDomaine[selected.id].name}
+                  {domaine?.subDomaine[0].name}
                 </span>
                 <span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
                   {open ? (
@@ -489,7 +491,7 @@ function Espically() {
                 show={open}
               >
                 <ListboxOptions className="absolute z-10 mt-1 w-full bg-white shadow-lg max-h-60 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm">
-                  {Domaine_Espicality.map((person) => (
+                  {domaine?.subDomaine.map((person) => (
                     <ListboxOption
                       key={person.id}
                       className={({focus}) =>
@@ -498,7 +500,7 @@ function Espically() {
                           'cursor-default text-lg md:text-start text-center pr-6 select-none relative py-2'
                         )
                       }
-                      value={person}
+                      value={person.id}
                     >
                       {({focus}) => (
                         <>
@@ -508,7 +510,7 @@ function Espically() {
                               'block truncate'
                             )}
                           >
-                            {person.subDomaine[selected.id].name}
+                            {person.name}
                           </span>
 
                           {focus ? (
@@ -539,128 +541,3 @@ function Espically() {
     </Field>
   );
 }
-/* function Speciality() {
-  const people = [
-    {
-      id: 1,
-      subDomaine: [
-        {id: 1, name: 'Alarme anti-intrusion'},
-        {id: 2, name: 'Alarme anti-intrusion'},
-        {id: 3, name: 'Alarme anti-intrusion'},
-        {id: 4, name: 'Alarme anti-intrusion'},
-        {id: 5, name: 'Alarme anti-intrusion'},
-        {id: 6, name: 'Alarme anti-intrusion'},
-        {id: 7, name: 'Alarme anti-intrusion'},
-        {id: 8, name: 'Alarme anti-intrusion'},
-        {id: 9, name: 'Alarme anti-intrusion'}
-      ]
-    },
-    {id: 2, name: 'باحة'},
-    {id: 3, name: 'بن عروس'},
-    {id: 4, name: 'بنزرت'},
-    {id: 5, name: 'قابس'},
-    {id: 6, name: 'قفصة '},
-    {id: 7, name: 'قبلي'},
-    {id: 8, name: 'جندوبة'},
-    {id: 9, name: 'القيروان'},
-    {id: 10, name: 'القصرين'},
-    {id: 11, name: 'المهدية'},
-    {id: 12, name: 'منوبة'},
-    {id: 13, name: 'منستير'},
-    {id: 14, name: 'مدنين'},
-    {id: 15, name: 'نابل'},
-    {id: 16, name: 'صفاقس'},
-    {id: 17, name: 'سوسة'},
-    {id: 18, name: ' سليانة'},
-    {id: 19, name: 'سيدي بوزيد'},
-    {id: 20, name: 'توزر'},
-    {id: 21, name: 'تطاوين'}
-  ];
-  const [selected, setSelected] = useState(people[3]);
-  return (
-    <Field>
-      <Label className=" text-xl md:lg block text-center md:text-right pr-12 font-medium text-gray-400">
-        المعتمدية
-      </Label>
-      <Listbox onChange={setSelected} value={selected}>
-        {({open}) => (
-          <>
-            <div className="mt-1 relative">
-              <ListboxButton className="bg-white relative w-full border-white pr-12  md:text-right cursor-default sm:text-sm">
-                <span className="block truncate text-lg font-medium text-gray-800">
-                  {selected.name}
-                </span>
-                <span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
-                  {open ? (
-                    <ChevronUpIcon
-                      aria-hidden="true"
-                      className="h-5 w-5 text-gray-400"
-                    />
-                  ) : (
-                    <ChevronDownIcon
-                      aria-hidden="true"
-                      className="h-5 w-5 text-gray-400"
-                    />
-                  )}
-                </span>
-              </ListboxButton>
-
-              <Transition
-                as={Fragment}
-                leave="transition ease-in duration-100"
-                leaveFrom="opacity-100"
-                leaveTo="opacity-0"
-                show={open}
-              >
-                <ListboxOptions className="absolute z-10 mt-1 w-full bg-white shadow-lg max-h-60 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm">
-                  {people.map((person) => (
-                    <ListboxOption
-                      key={person.id}
-                      className={({focus}) =>
-                        clsx(
-                          focus ? 'text-white bg-blue-600' : 'text-gray-900',
-                          'cursor-default text-lg md:text-start text-center pr-6 select-none relative py-2'
-                        )
-                      }
-                      value={person}
-                    >
-                      {({focus}) => (
-                        <>
-                          <span
-                            className={clsx(
-                              selected ? 'font-semibold' : 'font-normal',
-                              'block truncate'
-                            )}
-                          >
-                            {person.name}
-                          </span>
-
-                          {selected ? (
-                            <Fragment>
-                              <CheckIcon
-                                aria-hidden="true"
-                                className="h-5 w-5"
-                              />
-
-                              <span
-                                className={clsx(
-                                  focus ? 'text-white' : 'text-blue-600',
-                                  'absolute inset-y-0 right-0 flex items-center pr-4'
-                                )}
-                              />
-                            </Fragment>
-                          ) : null}
-                        </>
-                      )}
-                    </ListboxOption>
-                  ))}
-                </ListboxOptions>
-              </Transition>
-            </div>
-          </>
-        )}
-      </Listbox>
-    </Field>
-  );
-}
- */
