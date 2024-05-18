@@ -1,15 +1,14 @@
 'use client';
+import {useKeenSlider} from 'keen-slider/react';
 import Image from 'next/image';
 // I18n import
 import {useTranslations} from 'next-intl';
 // component import
-import {Navigation, Pagination} from 'swiper/modules';
-import {SwiperSlide} from 'swiper/react';
 import ShareButton from '@/components/button/share.button';
 import ToolTipsWebsite from '@/components/button/tollTips.website';
 import ToolTipsContact from '@/components/button/toolTips.contact';
 // Ui import for swiper
-import Swiper from '@/lib/swiper';
+
 // User Types
 interface dataIterface {
   id: number;
@@ -51,6 +50,7 @@ export default function PersonCard() {
       phone: '29 557 213  '
     }
   ];
+  const [ref] = useKeenSlider<HTMLDivElement>();
   const AdsSlider: Array<string> = ['/ads/1.jpg', '/ads/2.jpg', '/ads/3.jpg'];
   return (
     <div>
@@ -63,17 +63,9 @@ export default function PersonCard() {
             <strong className="p-3 text-2xl"> 🔥🔥</strong>
           </div>
 
-          <Swiper
-            autoplay={{delay: 3000, disableOnInteraction: true}}
-            className="mySwiper"
-            modules={[Pagination, Navigation]}
-            navigation
-            pagination={{
-              type: 'progressbar'
-            }}
-          >
+          <div ref={ref} className="keen-slider">
             {AdsSlider.map((section) => (
-              <SwiperSlide key={Math.random()}>
+              <div key={Math.random()} className="keen-slider__slide">
                 <Image
                   alt="ads"
                   className="h-32 p-3 w-60 m-auto pb-8"
@@ -82,9 +74,9 @@ export default function PersonCard() {
                   src={section}
                   width={1000}
                 />
-              </SwiperSlide>
+              </div>
             ))}
-          </Swiper>
+          </div>
         </div>
         {data.map((section) => (
           <div

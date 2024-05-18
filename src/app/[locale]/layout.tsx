@@ -4,12 +4,12 @@ import {NextIntlClientProvider, useMessages} from 'next-intl';
 import {ReactNode} from 'react';
 // css import for tailwindcss
 import '@/app/[locale]/globals.css';
+import 'keen-slider/keen-slider.min.css';
 
 type Props = {
   children: ReactNode;
   params: {locale: string};
 };
-
 export default function LocaleLayout({children, params: {locale}}: Props) {
   const messages = useMessages();
 
