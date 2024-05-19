@@ -15,10 +15,7 @@ import clsx from 'clsx';
 import {useTranslations} from 'next-intl';
 // react import hook
 import {Fragment, useEffect, useState} from 'react';
-// type function 
-interface ChildAProps {
-  onDataChange: (data: string) => void;
-}
+
 export function Search() {
   const [data, setData] = useState<number>(1);
   function handleDataChange(newData: number) {
@@ -82,8 +79,11 @@ export function Search() {
     </main>
   );
 }
-function JobList({onDataChange}) {
-
+// type for Job Components
+interface Propes {
+  onDataChange(id: number): void;
+}
+function JobList({onDataChange}: Propes) {
   const t = useTranslations('JOB_CATEGORIES');
   const JOB_CATEGORIES = [
     {id: 1, name: t('1')},
@@ -309,158 +309,161 @@ function CountryList() {
     </Field>
   );
 }
-function Espically({data}) {
-  const t = useTranslations('JOB_Sub_CATEGORIES');
+interface Props {
+  data: number;
+}
 
+function Espically({data}: Props) {
+  const tr = useTranslations('JOB_Sub_CATEGORIES');
   const Domaine_Espicality = [
     {
       id: 1,
       subDomaine: [
-        {id: 1, name: t('1')},
-        {id: 2, name: t('2')},
-        {id: 3, name: t('3')},
-        {id: 4, name: t('4')},
-        {id: 5, name: t('5')},
-        {id: 6, name: t('6')},
-        {id: 7, name: t('7')},
-        {id: 8, name: t('8')},
-        {id: 9, name: t('9')}
+        {id: 1, name: tr('1')},
+        {id: 2, name: tr('2')},
+        {id: 3, name: tr('3')},
+        {id: 4, name: tr('4')},
+        {id: 5, name: tr('5')},
+        {id: 6, name: tr('6')},
+        {id: 7, name: tr('7')},
+        {id: 8, name: tr('8')},
+        {id: 9, name: tr('9')}
       ]
     },
     {
       id: 2,
       subDomaine: [
-        {id: 1, name: t('10')},
-        {id: 2, name: t('11')},
-        {id: 3, name: t('12')},
-        {id: 4, name: t('13')},
-        {id: 5, name: t('14')}
+        {id: 1, name: tr('10')},
+        {id: 2, name: tr('11')},
+        {id: 3, name: tr('12')},
+        {id: 4, name: tr('13')},
+        {id: 5, name: tr('14')}
       ]
     },
     {
       id: 3,
       subDomaine: [
-        {id: 1, name: t('16')},
-        {id: 2, name: t('17')},
-        {id: 3, name: t('18')}
+        {id: 1, name: tr('16')},
+        {id: 2, name: tr('17')},
+        {id: 3, name: tr('18')}
       ]
     },
     {
       id: 4,
       subDomaine: [
-        {id: 1, name: t('19')},
-        {id: 2, name: t('20')},
-        {id: 3, name: t('21')},
-        {id: 4, name: t('22')},
-        {id: 5, name: t('23')},
-        {id: 6, name: t('24')}
+        {id: 1, name: tr('19')},
+        {id: 2, name: tr('20')},
+        {id: 3, name: tr('21')},
+        {id: 4, name: tr('22')},
+        {id: 5, name: tr('23')},
+        {id: 6, name: tr('24')}
       ]
     },
     {
       id: 5,
       subDomaine: [
-        {id: 1, name: t('25')},
-        {id: 2, name: t('26')},
-        {id: 3, name: t('27')},
-        {id: 4, name: t('28')},
-        {id: 5, name: t('29')},
-        {id: 6, name: t('30')}
+        {id: 1, name: tr('25')},
+        {id: 2, name: tr('26')},
+        {id: 3, name: tr('27')},
+        {id: 4, name: tr('28')},
+        {id: 5, name: tr('29')},
+        {id: 6, name: tr('30')}
       ]
     },
     {
       id: 6,
       subDomaine: [
-        {id: 1, name: t('31')},
-        {id: 2, name: t('32')},
-        {id: 3, name: t('33')},
-        {id: 4, name: t('34')},
-        {id: 5, name: t('35')}
+        {id: 1, name: tr('31')},
+        {id: 2, name: tr('32')},
+        {id: 3, name: tr('33')},
+        {id: 4, name: tr('34')},
+        {id: 5, name: tr('35')}
       ]
     },
     {
       id: 7,
       subDomaine: [
-        {id: 1, name: t('36')},
-        {id: 2, name: t('37')},
-        {id: 3, name: t('38')},
-        {id: 4, name: t('39')},
-        {id: 5, name: t('40')}
+        {id: 1, name: tr('36')},
+        {id: 2, name: tr('37')},
+        {id: 3, name: tr('38')},
+        {id: 4, name: tr('39')},
+        {id: 5, name: tr('40')}
       ]
     },
     {
       id: 8,
       subDomaine: [
-        {id: 1, name: t('41')},
-        {id: 2, name: t('42')},
-        {id: 3, name: t('43')},
-        {id: 4, name: t('44')},
-        {id: 5, name: t('45')},
-        {id: 6, name: t('46')},
-        {id: 7, name: t('47')}
+        {id: 1, name: tr('41')},
+        {id: 2, name: tr('42')},
+        {id: 3, name: tr('43')},
+        {id: 4, name: tr('44')},
+        {id: 5, name: tr('45')},
+        {id: 6, name: tr('46')},
+        {id: 7, name: tr('47')}
       ]
     },
     {
       id: 9,
       subDomaine: [
-        {id: 1, name: t('48')},
-        {id: 2, name: t('49')},
-        {id: 3, name: t('50')}
+        {id: 1, name: tr('48')},
+        {id: 2, name: tr('49')},
+        {id: 3, name: tr('50')}
       ]
     },
     {
       id: 10,
       subDomaine: [
-        {id: 1, name: t('48')},
-        {id: 2, name: t('49')},
-        {id: 3, name: t('50')}
+        {id: 1, name: tr('48')},
+        {id: 2, name: tr('49')},
+        {id: 3, name: tr('50')}
       ]
     },
     {
       id: 11,
       subDomaine: [
-        {id: 1, name: t('51')},
-        {id: 2, name: t('52')},
-        {id: 3, name: t('53')},
-        {id: 4, name: t('54')},
-        {id: 5, name: t('55')}
+        {id: 1, name: tr('51')},
+        {id: 2, name: tr('52')},
+        {id: 3, name: tr('53')},
+        {id: 4, name: tr('54')},
+        {id: 5, name: tr('55')}
       ]
     },
     {
       id: 12,
       subDomaine: [
-        {id: 1, name: t('56')},
-        {id: 2, name: t('57')},
-        {id: 3, name: t('58')},
-        {id: 4, name: t('59')},
-        {id: 5, name: t('60')},
-        {id: 5, name: t('61')},
-        {id: 5, name: t('62')},
-        {id: 5, name: t('63')},
-        {id: 5, name: t('64')}
+        {id: 1, name: tr('56')},
+        {id: 2, name: tr('57')},
+        {id: 3, name: tr('58')},
+        {id: 4, name: tr('59')},
+        {id: 5, name: tr('60')},
+        {id: 5, name: tr('61')},
+        {id: 5, name: tr('62')},
+        {id: 5, name: tr('63')},
+        {id: 5, name: tr('64')}
       ]
     },
     {
       id: 13,
       subDomaine: [
-        {id: 1, name: t('65')},
-        {id: 2, name: t('66')},
-        {id: 3, name: t('67')},
-        {id: 4, name: t('68')},
-        {id: 5, name: t('69')},
-        {id: 6, name: t('70')}
+        {id: 1, name: tr('65')},
+        {id: 2, name: tr('66')},
+        {id: 3, name: tr('67')},
+        {id: 4, name: tr('68')},
+        {id: 5, name: tr('69')},
+        {id: 6, name: tr('70')}
       ]
     },
     {
       id: 14,
       subDomaine: [
-        {id: 1, name: t('71')},
-        {id: 2, name: t('72')},
-        {id: 3, name: t('73')},
-        {id: 4, name: t('74')},
-        {id: 5, name: t('75')},
-        {id: 6, name: t('76')},
-        {id: 7, name: t('77')},
-        {id: 8, name: t('78')}
+        {id: 1, name: tr('71')},
+        {id: 2, name: tr('72')},
+        {id: 3, name: tr('73')},
+        {id: 4, name: tr('74')},
+        {id: 5, name: tr('75')},
+        {id: 6, name: tr('76')},
+        {id: 7, name: tr('77')},
+        {id: 8, name: tr('78')}
       ]
     }
   ];
@@ -469,7 +472,7 @@ function Espically({data}) {
   return (
     <Field>
       <Label className=" text-xl md:lg block text-center md:text-right pr-12 font-medium text-gray-400">
-        {t('title')}
+        {tr('title')}
       </Label>
       <Listbox>
         {({open}) => (
