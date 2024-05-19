@@ -14,9 +14,16 @@ import clsx from 'clsx';
 // headlessUi Import
 import {useTranslations} from 'next-intl';
 // react import hook
-import {Fragment, useState} from 'react';
-
+import {Fragment, useEffect, useState} from 'react';
+// type function 
+interface ChildAProps {
+  onDataChange: (data: string) => void;
+}
 export function Search() {
+  const [data, setData] = useState<number>(1);
+  function handleDataChange(newData: number) {
+    setData(newData);
+  }
   return (
     <main className="lg:relative" dir="rtl">
       <div className="area h-[400px]">
@@ -47,10 +54,10 @@ export function Search() {
 
             <div className="flex md:flex-row flex-col space-y-5 md:space-y-0 items-center border-white border-[10px] shadow-xl bg-white rounded-xl h-auto md:h-[70px] mt-5 justify-between ">
               <div className="md:basis-1/4 w-full ">
-                <JobList />
+                <JobList onDataChange={handleDataChange} />
               </div>
               <div className="md:basis-1/4 w-full">
-                <Espically />
+                <Espically data={data} />
               </div>
               <div className=" md:basis-1/4 w-full">
                 <CountryList />
@@ -75,9 +82,9 @@ export function Search() {
     </main>
   );
 }
-function JobList() {
-  const t = useTranslations('JOB_CATEGORIES');
+function JobList({onDataChange}) {
 
+  const t = useTranslations('JOB_CATEGORIES');
   const JOB_CATEGORIES = [
     {id: 1, name: t('1')},
     {id: 2, name: t('2')},
@@ -94,7 +101,12 @@ function JobList() {
     {id: 13, name: t('13')},
     {id: 14, name: t('14')}
   ];
+
   const [selected, setSelected] = useState(JOB_CATEGORIES[1]);
+  useEffect(() => {
+    onDataChange(selected.id);
+  }, [onDataChange, selected]);
+
   return (
     <Field>
       <Label className=" text-xl md:lg block text-center md:text-right pr-12 font-medium text-gray-400">
@@ -297,7 +309,7 @@ function CountryList() {
     </Field>
   );
 }
-function Espically() {
+function Espically({data}) {
   const t = useTranslations('JOB_Sub_CATEGORIES');
 
   const Domaine_Espicality = [
@@ -452,15 +464,14 @@ function Espically() {
       ]
     }
   ];
-  const [selected, setSelected] = useState(Domaine_Espicality[1]);
-  const domaine = Domaine_Espicality.find((d) => d.id === 13);
+  const domaine = Domaine_Espicality.find((d) => d.id === data);
 
   return (
     <Field>
       <Label className=" text-xl md:lg block text-center md:text-right pr-12 font-medium text-gray-400">
         {t('title')}
       </Label>
-      <Listbox onChange={setSelected} value={selected}>
+      <Listbox>
         {({open}) => (
           <>
             <div className="mt-1 relative">
