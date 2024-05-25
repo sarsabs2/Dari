@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import ReactPlayer from 'react-player/lazy';
+import ReactPlayer from 'react-player/file';
 
 export function ShortsView() {
   return (
@@ -8,6 +8,7 @@ export function ShortsView() {
       <ReactPlayer
         controls
         height="100%"
+        muted
         playing
         url="/fakedb/short.mp4"
         width="100%"
