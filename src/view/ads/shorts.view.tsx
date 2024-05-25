@@ -4,11 +4,11 @@ import ReactPlayer from 'react-player/file';
 
 export function ShortsView() {
   return (
-    <div className=" rounded-lg h-screen">
+    <div className="fixed inset-0">
       <ReactPlayer
         controls
         height="100%"
-        muted
+        muted={false}
         playing
         url="/fakedb/short.mp4"
         width="100%"
