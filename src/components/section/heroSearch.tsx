@@ -18,6 +18,8 @@ import {Fragment, useEffect, useState} from 'react';
 
 export function Search() {
   const [data, setData] = useState<number>(1);
+  const t = useTranslations('HeroSearch');
+
   function handleDataChange(newData: number) {
     setData(newData);
   }
@@ -42,10 +44,11 @@ export function Search() {
           <div className="px-4  sm:px-8 xl:pr-16">
             <h1 className=" animate-blob text-4xl  tracking-tight text-center font-extrabold text-gray-800 sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl">
               <span className="block xl:inline selection:text-blue-300  ">
-                الخدام الي تستحقو في مرمتك
+                {' '}
+                {t('title1')}{' '}
               </span>
               <span className="block text-blue-600 xl:inline  ">
-                <strong>موجود عندنا </strong>
+                <strong> {t('title2')} </strong>
               </span>
             </h1>
 
@@ -69,7 +72,7 @@ export function Search() {
            before:from-[#00509b] before:to-[rgb(105,126,184)] before:transition-all before:duration-500 before:ease-in-out before:z-[-1] before:rounded-xl hover:before:left-0 text-[#fff]"
                   type="button"
                 >
-                  بحث
+                  {t('search')}
                 </button>
               </div>
             </div>

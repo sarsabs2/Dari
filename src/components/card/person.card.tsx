@@ -1,6 +1,9 @@
 'use client';
 import {useKeenSlider} from 'keen-slider/react';
-import Image from 'next/image';
+// next Import
+import Link from 'next/link';
+// cloudinary Import for Person Ads
+import {CldImage} from 'next-cloudinary';
 // I18n import
 import {useTranslations} from 'next-intl';
 // component import
@@ -22,35 +25,53 @@ export default function PersonCard() {
   const data: Array<dataIterface> = [
     {
       id: 1,
-      name: 'بلقاسم غرس الله',
-      src: '/fakedb/1.jpg',
+      name: 'بلقاسم جاب الله',
+      src: 'employer/moczii26ipuv4bfjae4q',
       job: ' بناء',
       phone: '29 583 452 '
     },
     {
       id: 2,
-      name: 'عصام الشوالي ',
-      src: '/fakedb/2.jpg',
+      name: 'fake name ',
+      src: 'employer/xh5mjxqpjfwxsuwrryju',
       job: 'نجار ',
       phone: '29 557 512 '
     },
     {
       id: 3,
-      name: '  كريم بنزيما',
-      src: '/fakedb/3.jpg',
+      name: 'نصر لحول ',
+      src: 'employer/nc99oelzvg2gmo3zifqd',
       job: ' دهان',
       phone: '29 557 212 '
     },
     {
       id: 4,
       name: '  الفتحي ولد العيدي',
-      src: '/fakedb/1.jpg',
+      src: 'employer/nfwqbo4pexvhctdy2aut',
       job: 'حداد',
       phone: '29 557 213  '
     }
   ];
-  const [ref] = useKeenSlider<HTMLDivElement>();
-  const AdsSlider: Array<string> = ['/ads/1.jpg', '/ads/2.jpg', '/ads/3.jpg'];
+  // slide for ads initailize
+  const [sliderRef] = useKeenSlider<HTMLDivElement>({
+    loop: false,
+    mode: 'free',
+    rtl: false,
+    slides: {perView: 'auto'}
+  });
+
+  // const [ref] = useKeenSlider<HTMLDivElement>();
+  const AdsSlider: Array<string> = [
+    'AdsPerson/lvf6zta9dufosiwvldkc',
+    'AdsPerson/xu06vnqkv8oaq9g3tfmd',
+    'AdsPerson/vihosry0gq0whlpaqy5i',
+    'AdsPerson/lvf6zta9dufosiwvldkc',
+    'AdsPerson/xu06vnqkv8oaq9g3tfmd',
+    'AdsPerson/vihosry0gq0whlpaqy5i',
+    'AdsPerson/lvf6zta9dufosiwvldkc',
+    'AdsPerson/xu06vnqkv8oaq9g3tfmd',
+    'AdsPerson/vihosry0gq0whlpaqy5i'
+  ];
   return (
     <div>
       <div className="bg-white m-auto w-full max-w-7xl justify-center items-center pb-10 mb-10 grid grid-cols-1 lg:grid-cols-4 gap-4">
@@ -61,20 +82,35 @@ export default function PersonCard() {
             </h4>
             <strong className="p-3 text-2xl"> 🔥🔥</strong>
           </div>
-
-          <div ref={ref} className="keen-slider">
-            {AdsSlider.map((section) => (
-              <div key={Math.random()} className="keen-slider__slide">
-                <Image
-                  alt="ads"
-                  className="h-32 p-3 w-60 m-auto pb-8"
-                  height={1000}
-                  quality={100}
-                  src={section}
-                  width={1000}
-                />
+          <div className=" mx-auto flex items-center justify-center m-auto">
+            <div
+              ref={sliderRef}
+              className="keen-slider"
+              style={{maxWidth: 600}}
+            >
+              <div className=" mx-auto flex space-x-5  items-center justify-center px-4">
+                {AdsSlider.map((section) => (
+                  <div key={Math.random()} className="keen-slider__slide">
+                    <div
+                      className="relative inline-block "
+                      style={{maxWidth: 80, minWidth: 120}}
+                    >
+                      <Link href="/ads">
+                        <CldImage
+                          alt="section"
+                          className="w-32 h-28 rounded-full border-2 border-blue-600 p-0.5"
+                          height="600"
+                          sizes="100vw"
+                          src={section}
+                          width="960"
+                        />
+                      </Link>
+                      <span className="h-3 w-3 rounded-full border border-white bg-green-500 block absolute top-1 right-0" />
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
         </div>
         {data.map((section) => (
@@ -89,13 +125,13 @@ export default function PersonCard() {
     group-hover:before:scale-[2.5] motion-safe:before:transition-all 
     motion-safe:transform-gpu motion-safe:before:duration-500 before:origin-center group-hover:outline-sky-400"
             >
-              <Image
-                alt="emolyer job"
+              <CldImage
+                alt="employer job"
                 className="rounded-full block w-[200px] h-[160px] bg-sky-500 object-cover z-10 relative"
-                height={500}
-                quality={80}
+                height="600"
+                sizes="100vw"
                 src={section.src}
-                width={500}
+                width="960"
               />
             </figure>
             <header className="motion-safe:translate-y-4 group-hover:translate-y-0 motion-safe:transition-transform motion-safe:transform-gpu motion-safe:duration-500">

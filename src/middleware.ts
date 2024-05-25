@@ -5,7 +5,8 @@ import {locales} from '@/navigation';
 
 const publicPages = [
   '/',
-  '/login'
+  '/login',
+  '/ads'
   // (/secret requires auth)
 ];
 

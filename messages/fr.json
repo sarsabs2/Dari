@@ -20,6 +20,11 @@
     "forbiddenWords":"La phrase fournie inclut un mot interdit.",
     "Validation_Special_Characters":"Ce champ ne prend pas en charge les caractères spéciaux."
   },
+  "HeroSearch":{
+    "title1":"se trouve ici un text ",
+    "title2":"en francais",
+    "search":"recherche"
+  },
   "Login": {
     "title": "Se connecter",
     "qustion": "vous avez déjà un compte ?",

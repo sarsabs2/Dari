@@ -19,6 +19,11 @@
     "forbiddenWords": "The provided sentence includes a prohibited word.",
     "Validation_Special_Characters": "This field does not support special characters."
   },
+  "HeroSearch":{
+    "title1":"put some title her ",
+    "title2":"in en",
+    "search":"search"
+  },
   "Login": {
     "title": "Sign in ",
     "qustion": "Don't have an account?",

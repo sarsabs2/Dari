@@ -18,7 +18,7 @@ export default function LocaleLayout({children, params: {locale}}: Props) {
   return (
     <html lang={locale}>
       <head>
-        <title>mainApp</title>
+        <title>Dari Assistance</title>
       </head>
       <body>
         <NextIntlClientProvider locale={locale} messages={messages}>

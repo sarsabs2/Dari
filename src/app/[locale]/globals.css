@@ -109,7 +109,6 @@
 */
 .area {
 	background: #32a0d3;
-	background: -webkit-linear-gradient(to left, #8f94fb, #2f87eb);
 	width:100%;
 	position: absolute;
 	z-index: -1;
