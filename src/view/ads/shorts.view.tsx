@@ -8,7 +8,7 @@ export function ShortsView() {
       <ReactPlayer
         controls
         height="100%"
-        muted={true}
+        muted
         playing
         url="/fakedb/short.mp4"
         width="100%"

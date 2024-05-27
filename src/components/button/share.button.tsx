@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function ShareButton() {
   return (
-    <div className="tooltip-containers">
+    <div className="tooltip-containers ">
       <span className="text">
         <svg
           className="bi bi-send-fill"

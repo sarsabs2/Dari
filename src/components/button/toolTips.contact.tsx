@@ -1,8 +1,12 @@
+// imort Icon from Hero Icon
 import {PhoneIcon} from '@heroicons/react/24/solid';
+import clsx from 'clsx';
+
 // type
 interface Props {
   call: string;
   phone: string;
+  state: boolean;
 }
 
 export default function ToolTipsContact(props: Props) {
@@ -15,18 +19,32 @@ export default function ToolTipsContact(props: Props) {
           </div>
         </div>
       </div>
-      <div className="text">
-        <span className="icon">
-          <div className="layer">
+      <div className="text text-[#1da1f2] ">
+        <span className="icon ">
+          <div className="layer ">
             <span />
             <span />
             <span />
             <span />
             <span className="fab">
-              <PhoneIcon />
+              <PhoneIcon
+                className={clsx('', {
+                  'text-red-500 border  border-red-500': props.state === false,
+                  'text-[#1da1f2] border  border-cyan-500': props.state === true
+                })}
+              />
             </span>
           </div>
-          <div className="text">{props.call}</div>
+          <div className="text">
+            <h5
+              className={clsx('', {
+                'text-red-500 ': props.state === false,
+                'text-[#1da1f2] ': props.state === true
+              })}
+            >
+              {props.call}
+            </h5>
+          </div>
         </span>
       </div>
     </div>

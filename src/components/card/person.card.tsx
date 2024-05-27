@@ -1,4 +1,5 @@
 'use client';
+import clsx from 'clsx';
 import {useKeenSlider} from 'keen-slider/react';
 // next Import
 import Link from 'next/link';
@@ -18,6 +19,7 @@ interface dataIterface {
   src: string;
   job: string;
   phone: string;
+  state: boolean;
 }
 export default function PersonCard() {
   // initialion i18n
@@ -28,28 +30,32 @@ export default function PersonCard() {
       name: 'بلقاسم جاب الله',
       src: 'employer/moczii26ipuv4bfjae4q',
       job: ' بناء',
-      phone: '29 583 452 '
+      phone: '29 583 452 ',
+      state: true
     },
     {
       id: 2,
       name: 'fake name ',
       src: 'employer/xh5mjxqpjfwxsuwrryju',
       job: 'نجار ',
-      phone: '29 557 512 '
+      phone: '29 557 512 ',
+      state: false
     },
     {
       id: 3,
       name: 'نصر لحول ',
       src: 'employer/nc99oelzvg2gmo3zifqd',
       job: ' دهان',
-      phone: '29 557 212 '
+      phone: '29 557 212 ',
+      state: true
     },
     {
       id: 4,
       name: '  الفتحي ولد العيدي',
       src: 'employer/nfwqbo4pexvhctdy2aut',
       job: 'حداد',
-      phone: '29 557 213  '
+      phone: '29 557 213  ',
+      state: false
     }
   ];
   // slide for ads initailize
@@ -120,10 +126,15 @@ export default function PersonCard() {
  hover:shadow-2xl hover:shadow-sky-500/50 motion-safe:transition-all motion-safe:duration-700"
           >
             <figure
-              className="relative w-40 h-40 m-0 mx-auto rounded-full outline outline-offset-4 outline-sky-500 
-    before:content-[''] before:absolute before:block before:pointer-events-none before:rounded-full before:h-full before:w-full before:bg-sky-500 before:-z-[1]
-    group-hover:before:scale-[2.5] motion-safe:before:transition-all 
-    motion-safe:transform-gpu motion-safe:before:duration-500 before:origin-center group-hover:outline-sky-400"
+              className={clsx(
+                "relative w-40 h-40 m-0  mx-auto rounded-full outline outline-offset-4  before:content-[''] before:absolute before:block before:pointer-events-none before:rounded-full before:h-full before:w-full before:-z-[1] group-hover:before:scale-[2.5] motion-safe:before:transition-all motion-safe:transform-gpu motion-safe:before:duration-500 before:origin-center ",
+                {
+                  'outline-sky-500 group-hover:outline-sky-400 before:bg-sky-500':
+                    section.state === true,
+                  'outline-red-500 group-hover:outline-red-400 before:bg-red-500':
+                    section.state === false
+                }
+              )}
             >
               <CldImage
                 alt="employer job"
@@ -135,7 +146,15 @@ export default function PersonCard() {
               />
             </figure>
             <header className="motion-safe:translate-y-4 group-hover:translate-y-0 motion-safe:transition-transform motion-safe:transform-gpu motion-safe:duration-500">
-              <h3 className="font-semibold text-2xl text-center text-sky-500 mt-6 group-hover:text-gray-50  relative">
+              <h3
+                className={clsx(
+                  'font-semibold text-2xl text-center mt-6 group-hover:text-gray-50  relative',
+                  {
+                    'text-sky-500': section.state === true,
+                    'text-red-500': section.state === false
+                  }
+                )}
+              >
                 {section.name}
               </h3>
               <p className="text-center group-hover:text-gray-50  relative">
@@ -144,11 +163,17 @@ export default function PersonCard() {
             </header>
 
             <ul
-              className="flex justify-center space-x-4 mt-16 text-sky-500
-relative"
+              className={clsx('flex justify-center space-x-4 mt-16 relative', {
+                'text-sky-500': section.state === true,
+                'text-red-500': section.state === false
+              })}
             >
               <li className="motion-safe:translate-y-[100px] group-hover:translate-y-0 motion-safe:delay-100 motion-safe:transition">
-                <ToolTipsContact call={t('callT')} phone={section.phone} />
+                <ToolTipsContact
+                  call={t('callT')}
+                  phone={section.phone}
+                  state={section.state}
+                />
               </li>
               <li className="motion-safe:translate-y-[100px] group-hover:translate-y-0 motion-safe:delay-100 motion-safe:transition">
                 <ShareButton />

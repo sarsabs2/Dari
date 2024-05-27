@@ -287,12 +287,9 @@
   }
   .layer span,
   .text {
-	color: #1da1f2;
 	border-color: #1da1f2;
   }
-  .icon:hover.layer span {
-	box-shadow: -1px 1px 3px #1da1f2;
-  }
+ 
   .icon .text {
 	position: absolute;
 	left: 50%;
@@ -331,7 +328,6 @@
 	font-size: 30px;
 	line-height: 64px;
 	text-align: center;
-	fill: #1da1f2;
   }
   .user {
 	display: flex;
@@ -407,7 +403,6 @@
 	fill: #fff;
   }
   /* Fim do tooltip facebook */
-  
   /* Inicio do tooltip whatsApp */
   .tooltip3 {
 	position: absolute;
@@ -424,7 +419,6 @@
 	z-index: 1;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2)
  }
-  
   .tooltip-containers:hover .tooltip3 {
 	top: -100%;
 	opacity: 1;
@@ -461,7 +455,6 @@
 	z-index: 1;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   }
-  
   .tooltip-containers:hover .tooltip4 {
 	top: -100%;
 	opacity: 1;
