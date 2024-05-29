@@ -7,6 +7,7 @@ import {ReactNode} from 'react';
 import '@/app/[locale]/globals.css';
 // keen slider import css
 import 'keen-slider/keen-slider.min.css';
+import {NavigationBottom2} from '@/components/navbar/navigation.bottom';
 
 type Props = {
   children: ReactNode;
@@ -23,6 +24,7 @@ export default function LocaleLayout({children, params: {locale}}: Props) {
       <body>
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
+          <NavigationBottom2 />
           <SpeedInsights />
         </NextIntlClientProvider>
       </body>

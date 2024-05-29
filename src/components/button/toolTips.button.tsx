@@ -1,9 +1,113 @@
-import React from 'react';
+// imort Icon from Hero Icon
+import {PhoneIcon, IdentificationIcon} from '@heroicons/react/24/solid';
+import clsx from 'clsx';
+import Link from 'next/link';
 
-export default function ShareButton() {
+// type
+interface Props {
+  call: string;
+  phone: string;
+  state: boolean;
+}
+interface Props2 {
+  viewDetaile: string;
+  title: string;
+  state: boolean;
+}
+interface Props3 {
+  state: boolean;
+}
+export function ToolTipsContact(props: Props) {
+  return (
+    <div className="tooltip-container">
+      <div className="tooltip">
+        <div className="profile">
+          <div className="user">
+            <div className="img2 font-semibold capitalize">{props.phone}</div>
+          </div>
+        </div>
+      </div>
+      <div className="text text-primary">
+        <span className="icon ">
+          <div className="layer ">
+            <span />
+            <span />
+            <span />
+            <span />
+            <span className="fab">
+              <PhoneIcon
+                className={clsx('', {
+                  'text-red-500 border  border-red-500': props.state === false,
+                  'text-[#1da1f2] border  border-cyan-500': props.state === true
+                })}
+              />
+            </span>
+          </div>
+          <div className="text">
+            <h5
+              className={clsx('', {
+                'text-red-500 ': props.state === false,
+                'text-[#1da1f2] ': props.state === true
+              })}
+            >
+              <Link href={`tel: ${props.call}`}>{props.call}</Link>
+            </h5>
+          </div>
+        </span>
+      </div>
+    </div>
+  );
+}
+export function ToolTipsWebsite(props: Props2) {
+  return (
+    <div className="tooltip-container">
+      <div className="tooltip">
+        <div className="profile">
+          <div className="user">
+            <div className="img2 font-semibold capitalize">{props.title}</div>
+          </div>
+        </div>
+      </div>
+      <div className="text">
+        <span className="icon">
+          <div className="layer">
+            <span />
+            <span />
+            <span />
+            <span />
+            <span className="fab">
+              <IdentificationIcon
+                className={clsx('', {
+                  'text-red-500 border  border-red-500': props.state === false,
+                  'text-[#1da1f2] border  border-cyan-500': props.state === true
+                })}
+              />
+            </span>
+          </div>
+          <div className="text">
+            <h5
+              className={clsx('', {
+                'text-red-500 ': props.state === false,
+                'text-[#1da1f2] ': props.state === true
+              })}
+            >
+              {props.viewDetaile}
+            </h5>
+          </div>
+        </span>
+      </div>
+    </div>
+  );
+}
+export function ShareButton(props: Props3) {
   return (
     <div className="tooltip-containers ">
-      <span className="text">
+      <span
+        className={clsx('text', {
+          'fill-red-500 hover:fill-red-600 ': props.state === false,
+          'fill-[#1da1f2] hover:fill-[#02a6f2]': props.state === true
+        })}
+      >
         <svg
           className="bi bi-send-fill"
           height={32}

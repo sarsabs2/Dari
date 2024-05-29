@@ -7,10 +7,12 @@ import Link from 'next/link';
 import {CldImage} from 'next-cloudinary';
 // I18n import
 import {useTranslations} from 'next-intl';
-// component import
-import ShareButton from '@/components/button/share.button';
-import ToolTipsWebsite from '@/components/button/tollTips.website';
-import ToolTipsContact from '@/components/button/toolTips.contact';
+// UI  import
+import {
+  ToolTipsWebsite,
+  ToolTipsContact,
+  ShareButton
+} from '@/components/button/toolTips.button';
 
 // User Types
 interface dataIterface {
@@ -80,8 +82,8 @@ export default function PersonCard() {
   ];
   return (
     <div>
-      <div className="bg-white m-auto w-full max-w-7xl justify-center items-center pb-10 mb-10 grid grid-cols-1 lg:grid-cols-4 gap-4">
-        <div className="bg-white sticky inset-0 h-48 w-full  z-10 col-span-4">
+      <div className="  m-auto w-full max-w-7xl justify-center items-center pb-10 mb-10 grid grid-cols-1 lg:grid-cols-4 gap-4">
+        <div className=" sticky inset-0 h-48 w-full  z-10 col-span-4">
           <div className=" flex justify-center ">
             <h4 className="animate-textAds bg-gradient-to-r from-cyan-500 via-red-500 to-blue-500 bg-clip-text text-transparent text-center text-2xl p-3 font-black">
               Best Deal Today
@@ -176,10 +178,11 @@ export default function PersonCard() {
                 />
               </li>
               <li className="motion-safe:translate-y-[100px] group-hover:translate-y-0 motion-safe:delay-100 motion-safe:transition">
-                <ShareButton />
+                <ShareButton state={section.state} />
               </li>
               <li className="motion-safe:translate-y-[100px] group-hover:translate-y-0 motion-safe:delay-200 motion-safe:transition">
                 <ToolTipsWebsite
+                  state={section.state}
                   title={t('title')}
                   viewDetaile={t('viewDetaile')}
                 />
