@@ -11,21 +11,33 @@
 	  --color-primary: 13 110 253
 	}
 	}
-  html,
-  body {
+	html {
+		@apply scroll-smooth;
+	  }
 	
-    color:var(--text-light);
-
-    transition: background-color 0.7s, color 0.7s;
-  }
-
-[data-theme='dark'],
-[data-theme='dark'] body {
-  --background-Color:6 40 63;
-  --svg-Color:255 255 255;
-  transition: background-color 0.7s, color 0.7s;
-}
-
+	  .btn-primary {
+		@apply bg-cyan-600 font-semibold text-white md:mx-0 mx-auto rounded-full py-3 px-6 flex items-center gap-2;
+	  }
+	  
+	  .aboutImg::after {
+		@apply content-[''] w-full left-0 top-0 rounded-xl rotate-12 h-full absolute bg-gray-600 -z-10;
+	  }
+	  
+	  .swiper-pagination-bullet {
+		@apply bg-white;
+	  }
+	  
+	  input,
+	  textarea {
+		@apply bg-gray-700 outline-none rounded-lg p-3;
+	  }
+	  ::placeholder {
+		@apply text-lg;
+	  }
+	  
+	  ::selection {
+		@apply bg-cyan-600;
+	  }
 .card{
   height: 100vh;
   width: 100%;
@@ -547,7 +559,6 @@
 		rgb(9, 76, 114) 0%,
 		rgb(1, 41, 63) 100%
 	  );
-	background: #242433;
 	box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.5),
 	  inset 5px 5px 20px rgba(255, 255, 255, 0.2),
 	  inset -5px -5px 15px rgba(0, 0, 0, 0.75);

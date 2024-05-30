@@ -26,7 +26,7 @@ export function NavigationBottom2() {
   ];
   const pathname = usePathname();
   return (
-    <div className="fixed bottom-0">
+    <div className="fixed bottom-0 w-full">
       <ul className="navigation w-full flex space-x-5 h-20">
         {Menus.map((menu, i) => (
           <li key={i} className={clsx('', {active: pathname === menu.href})}>
