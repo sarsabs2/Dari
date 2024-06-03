@@ -91,7 +91,7 @@ export function ToolTipsWebsite(props: Props2) {
                 'text-[#1da1f2] ': props.state === true
               })}
             >
-              {props.viewDetaile}
+              <Link href="/cv">{props.viewDetaile}</Link>
             </h5>
           </div>
         </span>
