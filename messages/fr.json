@@ -20,6 +20,24 @@
     "forbiddenWords":"La phrase fournie inclut un mot interdit.",
     "Validation_Special_Characters":"Ce champ ne prend pas en charge les caractères spéciaux."
   },
+  "CV":{
+    "Hero_Hi":"Bonjour !",
+    "Hero_Name":"Je Suis ",
+    "Hero_Btn":"Mon CV",
+    "Btn_Call":"Appel-moi",
+    "About_Title":"Pour Moi",
+    "About_Intro":"Mon Conclu",
+   " About_Para":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
+    "About_Experience":"experiance",
+    "About_Project":"completed",
+    "About_Rejected":"refuse",
+    "Hire_Title":"Recrutez Moi ",
+    "Hire_header":"Avez-vous du travail pour moi ?",
+    "Hire_Intro":"Je serai à la hauteur de vos attentes.",
+    "Hire_Para":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"
+    ,"Project_Title":"Mon project",
+    "Project_":"My awesome works"
+  },
   "HeroSearch":{
     "title1":"se trouve ici un text ",
     "title2":"en francais",

@@ -1,3 +1,4 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -15,29 +16,13 @@
 		@apply scroll-smooth;
 	  }
 	
-	  .btn-primary {
-		@apply bg-cyan-600 font-semibold text-white md:mx-0 mx-auto rounded-full py-3 px-6 flex items-center gap-2;
-	  }
+
 	  
 	  .aboutImg::after {
-		@apply content-[''] w-full left-0 top-0 rounded-xl rotate-12 h-full absolute bg-gray-600 -z-10;
+		@apply content-[''] w-full left-0 top-0 rounded-xl rotate-12 h-full absolute bg-red-600 -z-10;
 	  }
-	  
-	  .swiper-pagination-bullet {
-		@apply bg-white;
-	  }
-	  
-	  input,
-	  textarea {
-		@apply bg-gray-700 outline-none rounded-lg p-3;
-	  }
-	  ::placeholder {
-		@apply text-lg;
-	  }
-	  
-	  ::selection {
-		@apply bg-cyan-600;
-	  }
+
+
 .card{
   height: 100vh;
   width: 100%;
@@ -664,3 +649,36 @@
 	transform: translateY(10px);
 	transition-delay: 0.2s;
   }
+
+/* for text animation */
+.containert{
+    width: 246px;
+    overflow: hidden;
+}
+.containert .text{
+    position: relative;
+    font-size: 26px;
+    font-weight: 600;
+}
+.containert .text.first-text{
+    color: #FFF;
+}
+.text.sec-text:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #111827;
+    border-left: 2px solid #4070F4;
+    animation: animate 4s steps(12) infinite;
+}
+@keyframes animate{
+    40%, 60%{
+        left: calc(100% + 4px);
+    }
+    100%{
+        left: 0%;
+    }
+}

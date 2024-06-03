@@ -19,6 +19,24 @@
     "forbiddenWords": "The provided sentence includes a prohibited word.",
     "Validation_Special_Characters": "This field does not support special characters."
   },
+  "CV":{
+    "Hero_Hi":"Hello !",
+    "Hero_Name":" My Name is",
+    "Hero_Btn":"Mon cv",
+    "About_Title":"About",
+    "Btn_Call":"Call",
+    "About_Intro":"My introduction",
+   " About_Para":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
+    "About_Experience":"years of Experience",
+    "About_Project":"Project Done",
+    "About_Rejected":"Rejected",
+    "Hire_Title":"Hire me",
+    "Hire_header":"Do you want any work from me?",
+    "Hire_Intro":"I will live up to your expectations.",
+    "Hire_Para":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
+    "Project_Title":"My Project",
+    "Project_":"My awesome works"
+  },
   "HeroSearch":{
     "title1":"put some title her ",
     "title2":"in en",
