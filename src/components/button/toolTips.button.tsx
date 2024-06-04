@@ -38,20 +38,22 @@ export function ToolTipsContact(props: Props) {
               <PhoneIcon
                 className={clsx('', {
                   'text-red-500 border  border-red-500': props.state === false,
-                  'text-[#1da1f2] border  border-cyan-500': props.state === true
+                  'text-[#1da1f2] border  border-sky-500': props.state === true
                 })}
               />
             </span>
           </div>
           <div className="text">
+          <Link href={`tel: ${props.call}`}>
             <h5
               className={clsx('', {
                 'text-red-500 ': props.state === false,
                 'text-[#1da1f2] ': props.state === true
               })}
             >
-              <Link href={`tel: ${props.call}`}>{props.call}</Link>
+             {props.call}
             </h5>
+            </Link>
           </div>
         </span>
       </div>
@@ -79,20 +81,22 @@ export function ToolTipsWebsite(props: Props2) {
               <IdentificationIcon
                 className={clsx('', {
                   'text-red-500 border  border-red-500': props.state === false,
-                  'text-[#1da1f2] border  border-cyan-500': props.state === true
+                  'text-[#1da1f2] border  border-sky-500': props.state === true
                 })}
               />
             </span>
           </div>
           <div className="text">
-            <h5
-              className={clsx('', {
-                'text-red-500 ': props.state === false,
-                'text-[#1da1f2] ': props.state === true
-              })}
-            >
-              <Link href="/cv">{props.viewDetaile}</Link>
-            </h5>
+            <Link href="/cv">
+              <h5
+                className={clsx('', {
+                  'text-red-500 ': props.state === false,
+                  'text-[#1da1f2] ': props.state === true
+                })}
+              >
+                {props.viewDetaile}
+              </h5>
+            </Link>
           </div>
         </span>
       </div>

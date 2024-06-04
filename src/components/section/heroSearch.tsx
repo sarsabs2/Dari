@@ -12,6 +12,7 @@ import {CheckIcon, ChevronUpIcon} from '@heroicons/react/24/outline';
 import {ChevronDownIcon} from '@heroicons/react/24/solid';
 import clsx from 'clsx';
 // headlessUi Import
+import {usePathname} from 'next/navigation';
 import {useTranslations} from 'next-intl';
 // react import hook
 import {Fragment, useEffect, useState} from 'react';
@@ -19,12 +20,12 @@ import {Fragment, useEffect, useState} from 'react';
 export function Search() {
   const [data, setData] = useState<number>(1);
   const t = useTranslations('HeroSearch');
-
+  const pathname = usePathname();
   function handleDataChange(newData: number) {
     setData(newData);
   }
   return (
-    <main className="lg:relative" dir="rtl">
+    <main className="lg:relative">
       <div className="area h-[400px]">
         <ul className="circles">
           <li />
@@ -39,20 +40,26 @@ export function Search() {
           <li />
         </ul>
       </div>
-      <div className="  pt-16 pb-20 lg:py-48 flex">
+      <div className="pt-16 pb-20 lg:py-48 flex">
         <section className="max-w-7xl  w-full mx-auto px-4 align-middle">
           <div className="px-4  sm:px-8 xl:pr-16">
             <h1 className=" animate-blob text-4xl  tracking-tight text-center font-extrabold text-gray-800 sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl">
               <span className="block xl:inline selection:text-blue-300  ">
-                {' '}
-                {t('title1')}{' '}
+                {t('title1')}
               </span>
-              <span className="block text-blue-600 xl:inline  ">
+              <span className="block text-sky-600 xl:inline  ">
                 <strong> {t('title2')} </strong>
               </span>
             </h1>
 
-            <div className="flex md:flex-row flex-col space-y-5 md:space-y-0 items-center border-white border-[10px] shadow-xl bg-white rounded-xl h-auto md:h-[70px] mt-5 justify-between ">
+            <div
+              className={clsx(
+                'flex md:flex-row flex-col space-y-5 md:space-y-0 items-center border-white border-[10px] shadow-xl bg-white rounded-xl h-auto md:h-[70px] mt-5 justify-between',
+                {
+                  'md:flex-row-reverse ': pathname === '/ar'
+                }
+              )}
+            >
               <div className="md:basis-1/4 w-full ">
                 <JobList onDataChange={handleDataChange} />
               </div>
@@ -64,7 +71,7 @@ export function Search() {
               </div>
               <div className="relative md:basis-1/4 w-full ">
                 <button
-                  className="w-[150px] bg-blue-400 
+                  className="w-[150px] bg-sky-400 m-auto
           h-[50px] my-3 flex items-center justify-center rounded-xl 
           cursor-pointer relative overflow-hidden transition-all duration-500 
           ease-in-out shadow-md hover:scale-105 hover:shadow-lg before:absolute 
@@ -145,14 +152,14 @@ function JobList({onDataChange}: Propes) {
                 leaveTo="opacity-0"
                 show={open}
               >
-                <ListboxOptions className="absolute z-10 mt-1 w-full bg-white shadow-lg max-h-60 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm">
+                <ListboxOptions className="absolute z-40 mt-1 w-full bg-white shadow-lg max-h-60 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm">
                   {JOB_CATEGORIES.map((person) => (
                     <ListboxOption
                       key={person.id}
                       className={({focus}) =>
                         clsx(
-                          focus ? 'text-white bg-blue-600' : 'text-gray-900',
-                          'cursor-default text-lg md:text-start text-center pr-6 select-none relative py-2'
+                          focus ? 'text-white bg-sky-600' : 'text-gray-900',
+                          'cursor-default text-lg md:text-center pr-6 select-none relative py-2'
                         )
                       }
                       value={person}
@@ -261,14 +268,14 @@ function CountryList() {
                 leaveTo="opacity-0"
                 show={open}
               >
-                <ListboxOptions className="absolute z-10 mt-1 w-full bg-white shadow-lg max-h-60 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm">
+                <ListboxOptions className="absolute z-20 mt-1 w-full bg-white shadow-lg max-h-60 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm">
                   {Gouvernements_tunisiens.map((person) => (
                     <ListboxOption
                       key={person.id}
                       className={({focus}) =>
                         clsx(
-                          focus ? 'text-white bg-blue-600' : 'text-gray-900',
-                          'cursor-default text-lg md:text-start text-center pr-6 select-none relative py-2'
+                          focus ? 'text-white bg-sky-600' : 'text-gray-900',
+                          'cursor-default text-lg  text-center pr-6 select-none relative py-2'
                         )
                       }
                       value={person}
@@ -293,7 +300,7 @@ function CountryList() {
 
                               <span
                                 className={clsx(
-                                  focus ? 'text-white' : 'text-blue-600',
+                                  focus ? 'text-white' : 'text-sky-600',
                                   'absolute inset-y-0 right-0 flex items-center pr-4'
                                 )}
                               />
@@ -513,8 +520,8 @@ function Espically({data}: Props) {
                       key={person.id}
                       className={({focus}) =>
                         clsx(
-                          focus ? 'text-white bg-blue-600' : 'text-gray-900',
-                          'cursor-default text-lg md:text-start text-center pr-6 select-none relative py-2'
+                          focus ? 'text-white bg-sky-600' : 'text-gray-900',
+                          'cursor-default text-lg text-center pr-6 select-none relative py-2'
                         )
                       }
                       value={person.id}
@@ -539,7 +546,7 @@ function Espically({data}: Props) {
 
                               <span
                                 className={clsx(
-                                  focus ? 'text-white' : 'text-blue-600',
+                                  focus ? 'text-white' : 'text-sky-600',
                                   'absolute inset-y-0 right-0 flex items-center pr-4'
                                 )}
                               />

@@ -59,7 +59,6 @@ export default function PersonCard() {
   ];
 
   return (
-    <div>
       <div className="bg-white m-auto w-full max-w-7xl justify-center items-center pb-10 mb-10 grid grid-cols-1 lg:grid-cols-4 gap-4">
         {data.map((section) => (
           <div
@@ -131,6 +130,5 @@ export default function PersonCard() {
           </div>
         ))}
       </div>
-    </div>
   );
 }

@@ -24,9 +24,9 @@ export function AdsPerson() {
     slides: {perView: 'auto'}
   });
   return (
-    <div className="bg-white sticky inset-0 h-32 w-full  z-10 col-span-4">
-      <div className=" flex justify-center ">
-        <h4 className="animate-textAds bg-gradient-to-r from-cyan-500 via-red-500 to-blue-500 bg-clip-text text-transparent text-center text-2xl p-3 font-black">
+    <div className="bg-white sticky inset-0 h-48 w-full  z-10 col-span-4">
+      <div className=" flex justify-center py-3">
+        <h4 className="animate-textAds bg-text text-5xl uppercase  select-none  bg-clip-text text-transparent text-center font-black">
           Best Deal Today
         </h4>
         <strong className="p-3 text-2xl"> 🔥🔥</strong>
