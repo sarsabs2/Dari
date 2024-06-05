@@ -1,5 +1,7 @@
+// cloudinary Import for Person Ads
+import {CldImage} from 'next-cloudinary';
+// next I18
 import {useTranslations} from 'next-intl';
-import React from 'react';
 
 function About() {
   const t = useTranslations('CV');
@@ -10,7 +12,7 @@ function About() {
     {text: t('About_Rejected'), count: '06'}
   ];
   return (
-    <section className="py-10 text-white ">
+    <section className="py-10 text-white">
       <div className="text-center mt-8">
         <h3 className="text-4xl font-semibold">{t('About_Title')}</h3>
         <p className="text-gray-400 my-3 text-lg">{t('About_Intro')}</p>
@@ -49,12 +51,15 @@ function About() {
               className="lg:w-96 h-full relative sm:w-10/12 w-11/12 max-w-sm
              after:content-[''] after:w-full after:left-0 after:top-0 
              after:rounded-xl after:rotate-12 after:h-full after:absolute 
-             after:bg-sky-600/10 after:-z-10 "
+             after:bg-cyan-600 after:-z-10 "
             >
-              <img
-                alt=""
-                className="w-full object-cover bg-sky-600 rounded-xl aboutImg"
-                src="/assets/images/about.png"
+              <CldImage
+                alt="employer job"
+                className="w-full object-cover bg-cyan-600 rounded-xl"
+                height="1000"
+                quality={100}
+                src="cv/do33q0qnyz8osaczukxv"
+                width="1000"
               />
             </div>
           </div>

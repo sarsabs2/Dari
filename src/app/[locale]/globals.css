@@ -14,7 +14,7 @@
 		@apply scroll-smooth;
 	  }
 	  .aboutImg::after {
-		@apply content-[''] w-full left-0 top-0 rounded-xl rotate-12 h-full absolute bg-slate-600 -z-10;
+		@apply content-[''] w-full left-0 top-0 rounded-xl rotate-12 h-full absolute bg-slate-900 -z-10;
 	  }
 	  .bg-text{
 		background: url(https://wordpress.iqonic.design/product/wp/streamit/wp-content/themes/streamit-theme/assets/images/redux/texture.jpg);

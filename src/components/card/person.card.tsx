@@ -59,76 +59,76 @@ export default function PersonCard() {
   ];
 
   return (
-      <div className="bg-white m-auto w-full max-w-7xl justify-center items-center pb-10 mb-10 grid grid-cols-1 lg:grid-cols-4 gap-4">
-        {data.map((section) => (
-          <div
-            key={section.id}
-            className="w-full m-auto my-4 max-w-[300px] col-span-4 lg:col-span-1 p-8 rounded-xl text-gray-800  overflow-hidden group 
+    <div className="bg-white m-auto w-full max-w-7xl justify-center items-center pb-10 mb-10 grid grid-cols-1 lg:grid-cols-4 gap-4">
+      {data.map((section) => (
+        <div
+          key={section.id}
+          className="w-full m-auto my-4 max-w-[300px] col-span-4 lg:col-span-1 p-8 rounded-xl text-gray-800  overflow-hidden group 
  hover:shadow-2xl hover:shadow-sky-500/50 motion-safe:transition-all motion-safe:duration-700"
+        >
+          <figure
+            className={clsx(
+              "relative w-40 h-40 m-0  mx-auto rounded-full outline outline-offset-4  before:content-[''] before:absolute before:block before:pointer-events-none before:rounded-full before:h-full before:w-full before:-z-[1] group-hover:before:scale-[2.5] motion-safe:before:transition-all motion-safe:transform-gpu motion-safe:before:duration-500 before:origin-center ",
+              {
+                'outline-sky-500 group-hover:outline-sky-400 before:bg-sky-500':
+                  section.state === true,
+                'outline-red-500 group-hover:outline-red-400 before:bg-red-500':
+                  section.state === false
+              }
+            )}
           >
-            <figure
+            <CldImage
+              alt="employer job"
+              className="rounded-full block w-[200px] h-[160px] bg-sky-500 object-cover z-10 relative"
+              height="600"
+              sizes="100vw"
+              src={section.src}
+              width="960"
+            />
+          </figure>
+          <header className="motion-safe:translate-y-4 group-hover:translate-y-0 motion-safe:transition-transform motion-safe:transform-gpu motion-safe:duration-500">
+            <h3
               className={clsx(
-                "relative w-40 h-40 m-0  mx-auto rounded-full outline outline-offset-4  before:content-[''] before:absolute before:block before:pointer-events-none before:rounded-full before:h-full before:w-full before:-z-[1] group-hover:before:scale-[2.5] motion-safe:before:transition-all motion-safe:transform-gpu motion-safe:before:duration-500 before:origin-center ",
+                'font-semibold text-2xl text-center mt-6 group-hover:text-gray-50  relative',
                 {
-                  'outline-sky-500 group-hover:outline-sky-400 before:bg-sky-500':
-                    section.state === true,
-                  'outline-red-500 group-hover:outline-red-400 before:bg-red-500':
-                    section.state === false
+                  'text-sky-500': section.state === true,
+                  'text-red-500': section.state === false
                 }
               )}
             >
-              <CldImage
-                alt="employer job"
-                className="rounded-full block w-[200px] h-[160px] bg-sky-500 object-cover z-10 relative"
-                height="600"
-                sizes="100vw"
-                src={section.src}
-                width="960"
-              />
-            </figure>
-            <header className="motion-safe:translate-y-4 group-hover:translate-y-0 motion-safe:transition-transform motion-safe:transform-gpu motion-safe:duration-500">
-              <h3
-                className={clsx(
-                  'font-semibold text-2xl text-center mt-6 group-hover:text-gray-50  relative',
-                  {
-                    'text-sky-500': section.state === true,
-                    'text-red-500': section.state === false
-                  }
-                )}
-              >
-                {section.name}
-              </h3>
-              <p className="text-center group-hover:text-gray-50  relative">
-                {section.job}
-              </p>
-            </header>
+              {section.name}
+            </h3>
+            <p className="text-center group-hover:text-gray-50  relative">
+              {section.job}
+            </p>
+          </header>
 
-            <ul
-              className={clsx('flex justify-center space-x-4 mt-16 relative', {
-                'text-sky-500': section.state === true,
-                'text-red-500': section.state === false
-              })}
-            >
-              <li className="motion-safe:translate-y-[100px] group-hover:translate-y-0 motion-safe:delay-100 motion-safe:transition">
-                <ToolTipsContact
-                  call={t('callT')}
-                  phone={section.phone}
-                  state={section.state}
-                />
-              </li>
-              <li className="motion-safe:translate-y-[100px] group-hover:translate-y-0 motion-safe:delay-100 motion-safe:transition">
-                <ShareButton state={section.state} />
-              </li>
-              <li className="motion-safe:translate-y-[100px] group-hover:translate-y-0 motion-safe:delay-200 motion-safe:transition">
-                <ToolTipsWebsite
-                  state={section.state}
-                  title={t('title')}
-                  viewDetaile={t('viewDetaile')}
-                />
-              </li>
-            </ul>
-          </div>
-        ))}
-      </div>
+          <ul
+            className={clsx('flex justify-center space-x-4 mt-16 relative', {
+              'text-sky-500': section.state === true,
+              'text-red-500': section.state === false
+            })}
+          >
+            <li className="motion-safe:translate-y-[100px] group-hover:translate-y-0 motion-safe:delay-100 motion-safe:transition">
+              <ToolTipsContact
+                call={t('callT')}
+                phone={section.phone}
+                state={section.state}
+              />
+            </li>
+            <li className="motion-safe:translate-y-[100px] group-hover:translate-y-0 motion-safe:delay-100 motion-safe:transition">
+              <ShareButton state={section.state} />
+            </li>
+            <li className="motion-safe:translate-y-[100px] group-hover:translate-y-0 motion-safe:delay-200 motion-safe:transition">
+              <ToolTipsWebsite
+                state={section.state}
+                title={t('title')}
+                viewDetaile={t('viewDetaile')}
+              />
+            </li>
+          </ul>
+        </div>
+      ))}
+    </div>
   );
 }

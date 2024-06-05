@@ -44,15 +44,15 @@ export function ToolTipsContact(props: Props) {
             </span>
           </div>
           <div className="text">
-          <Link href={`tel: ${props.call}`}>
-            <h5
-              className={clsx('', {
-                'text-red-500 ': props.state === false,
-                'text-[#1da1f2] ': props.state === true
-              })}
-            >
-             {props.call}
-            </h5>
+            <Link href={`tel: ${props.call}`}>
+              <h5
+                className={clsx('', {
+                  'text-red-500 ': props.state === false,
+                  'text-[#1da1f2] ': props.state === true
+                })}
+              >
+                {props.call}
+              </h5>
             </Link>
           </div>
         </span>

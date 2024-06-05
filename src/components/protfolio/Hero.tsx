@@ -1,6 +1,10 @@
+// cloudinary Import for Person Ads
+import {CldImage} from 'next-cloudinary';
+// next I18
 import {useTranslations} from 'next-intl';
+// React Imports
 import {useState, useEffect} from 'react';
-// I18n import
+
 function Hero() {
   const [Job, setJobs] = useState('Fullstack Developer');
   // initialion i18n
@@ -33,12 +37,15 @@ function Hero() {
     setInterval(textLoad, 12000);
   }, []);
   return (
-    <section className="min-h-screen flex py-10 md:flex-row flex-col items-center">
-      <div className="flex-1 flex items-center justify-center h-full">
-        <img
-          alt="/assets/images/hero.png"
-          className="md:w-11/12 h-full object-cover"
-          src="/assets/images/hero.png"
+    <section className=" flex py-10 md:flex-row flex-col items-center justify-between max-w-7xl m-auto lg:space-x-10">
+      <div className=" flex items-center justify-center lg:w-1/2 lg:h-[650px] h-full max-w-lg mx-4">
+        <CldImage
+          alt="employer job"
+          className="w-full object-cover"
+          height="1000"
+          quality={100}
+          src="cv/do33q0qnyz8osaczukxv"
+          width="1000"
         />
       </div>
       <div className="flex-1">
@@ -49,7 +56,7 @@ function Hero() {
               <br />
             </span>
             {t('Hero_Name')}
-            <span>Amar Hamed</span>
+            <span> Jenna Harc</span>
           </h1>
           <div className="containert">
             <h4 className="text sec-text text-lg font-bold text-cyan-600">
